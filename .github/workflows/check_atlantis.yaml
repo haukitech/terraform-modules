@@ -11,7 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 name: Terraform docs
 
 on:
@@ -21,12 +20,12 @@ jobs:
   check_docs_up_to_date:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Check Docs for all modules
         uses: terraform-docs/gh-actions@v1.2.0
         with:
           find-dir: .
           config-file: .terraform-docs.yml
-          output-file: README.md
+          output-method: ""
+          template: ""
           fail-on-diff: true
-          git-push: false
